@@ -1,24 +1,23 @@
-import logo from './logo.svg';
+
 import './App.css';
+import CakeContainer from "./components/CakeContainer";
+import {Provider} from "react-redux";
+import BookContainer from "./components/BookContainer"
+import store from "./Store";
+import UserContainer from "./components/UserContainer";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+   <Provider store={store}>
+
+<div className='main-part'>
+<div className="App">
+      <CakeContainer/>
+      <BookContainer/>
+     <UserContainer/>
     </div>
+</div>
+   </Provider>
   );
 }
 
